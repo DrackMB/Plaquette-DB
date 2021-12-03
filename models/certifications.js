@@ -3,7 +3,7 @@ const AutoIncrement = require("mongoose-sequence")(mongoose);
 
 var CertificationSchema = new mongoose.Schema({
   Libelle: [String],
-  logo: { data: Buffer, contentType: String },
+  logo: { data: String, contentType: String },
 });
 CertificationSchema.plugin(AutoIncrement, {
   inc_field: "idCertification",

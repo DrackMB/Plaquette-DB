@@ -16,11 +16,13 @@ try {
 }
 
 
-
+app.use(express.static(`${__dirname}/public`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", routes.ModuleRoute);
 app.use("/", routes.ProgrammeRoute);
 app.use("/", routes.BlocsRoute);
+app.use("/", routes.Certification);
+
 
 module.exports = app;

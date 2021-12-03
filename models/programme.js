@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 const AutoIncrement = require("mongoose-sequence")(mongoose);
 
 var ProgrammeSchema = new mongoose.Schema({
-  Annee: String,
+  libelle : String,
   UniteDenseignement: String,
   blocs: [{ type: mongoose.Schema.Types.ObjectId, ref: "Blocs" }],
 });

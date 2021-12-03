@@ -3,6 +3,7 @@ const express = require("express");
 const router = express.Router();
 router.post("/programme/", programme.create);
 router.get("/programme/", programme.findAll);
-router.post("/program/:_id", programme.addModule);
+router.get("/program/libelle/:libelle",programme.findOne)
+router.delete("/program/delete/programe/:programe/blocs/:blocs",programme.deleteBloc)
 
 module.exports = router;

@@ -1,5 +1,4 @@
 const db = require("../models");
-const Programme = db.Programme;
 const Module = db.Module;
 const Blocs = db.Blocs;
 
@@ -117,6 +116,7 @@ const deleteModuleFromBlocs = (blocID, modules, res) => {
     if (err) console.log(err);
   });
 };
+// delete module from blocs with name
 exports.deleteModule = (req, res) => {
   if (!req.body.CodeECTS) {
     res.status(400).send({ message: "Content can not be empty!" });
@@ -125,3 +125,24 @@ exports.deleteModule = (req, res) => {
   const blocsId = req.params._id;
   deleteModuleFromBlocs(blocsId, createNewModule(req), res);
 };
+
+exports.update = (req, res) => {
+  Blocs.updateOne({ libelle: req.params.libelle }, (err, data) => {
+    if (err) console.log(err);
+    res.send(data);
+  });
+};
+
+exports.deleteAll = (req, res) => {
+  Blocs.deleteMany((err, data) => {
+    if (err) console.log(err);
+    res.send(data);
+  });
+};
+
+exports.delete = (req,res)=>{
+  Blocs.deleteOne({libelle:req.params.libelle},(err,data)=>{
+    if(err) console.log(err)
+    res.send(data);
+  })
+}
