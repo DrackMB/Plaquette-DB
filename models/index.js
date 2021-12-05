@@ -5,4 +5,6 @@ module.exports = {
   Certifications: require("./certifications"),
   Finances: require("./finances"),
   Partenaires: require("./partenaires"),
+  Utilisateur: require("./utilisateur"),
+  Competences: require("./competences"),
 };

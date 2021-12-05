@@ -1,5 +1,4 @@
-const db = require("../models");
-const Module = db.Module;
+const { Module } = require("../models");
 
 const moduleInitialise = (req) =>
   new Module({
@@ -61,11 +60,11 @@ exports.update = (req, res) => {
   Module.findOneAndUpdate(
     { CodeECTS: moduleTmp.CodeECTS },
     {
-        AncienCodeECTS: moduleTmp.AncienCodeECTS,
-        CourseName: moduleTmp.CourseName,
-        CreditsETCS: moduleTmp.CreditsETCS,
-        Semaistre: moduleTmp.Semaistre,
-        Duree: moduleTmp.Duree,
+      AncienCodeECTS: moduleTmp.AncienCodeECTS,
+      CourseName: moduleTmp.CourseName,
+      CreditsETCS: moduleTmp.CreditsETCS,
+      Semaistre: moduleTmp.Semaistre,
+      Duree: moduleTmp.Duree,
     },
     {
       returnNewDocument: true,
@@ -78,17 +77,15 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  Module.deleteOne({CodeECTS:req.params.CodeECTS},(err,data)=>{
-   if(err) console.log(err);
-   res.send(data);
+  Module.deleteOne({ CodeECTS: req.params.CodeECTS }, (err, data) => {
+    if (err) console.log(err);
+    res.send(data);
   });
-  
 };
 
 exports.deleteAll = (req, res) => {
-  Module.deleteMany((err,data)=>{
-    if(err) console.log(err);
-    res.send(data)
-  })
+  Module.deleteMany((err, data) => {
+    if (err) console.log(err);
+    res.send(data);
+  });
 };
-

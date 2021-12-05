@@ -1,6 +1,4 @@
-const db = require("../models");
-const Module = db.Module;
-const Blocs = db.Blocs;
+const { Module, Blocs } = require("../models");
 
 const createNewModule = (req) => {
   return new Module({
@@ -140,9 +138,9 @@ exports.deleteAll = (req, res) => {
   });
 };
 
-exports.delete = (req,res)=>{
-  Blocs.deleteOne({libelle:req.params.libelle},(err,data)=>{
-    if(err) console.log(err)
+exports.delete = (req, res) => {
+  Blocs.deleteOne({ libelle: req.params.libelle }, (err, data) => {
+    if (err) console.log(err);
     res.send(data);
-  })
-}
+  });
+};

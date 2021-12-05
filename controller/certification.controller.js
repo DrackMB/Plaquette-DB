@@ -1,7 +1,4 @@
-const db = require("../models");
-var fs = require("fs");
-var path = require("path");
-const Certifications = db.Certifications;
+const { Certifications } = require("../models");
 
 const createNewCertification = (req) => {
   return new Certifications({

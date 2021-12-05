@@ -1,8 +1,12 @@
+
 module.exports = {
   ModuleRoute: require("./modulesRoute"),
   ProgrammeRoute: require("./programmeRoute"),
   BlocsRoute: require("./blocsRoute"),
-  Certification: require("./certificationRoute")
+  Certification: require("./certificationRoute"),
+  Finances: require("./financesRoute"),
+  Partenaires: require("./partenairesRoute"),
+  Utilisateur: require("./utilisateurRoute"),
+  Competences: require("./competenceRoute"),
 };
-//const usersModel = require("./models/users")
-//const usersController = require("./controllers/usersController")
+

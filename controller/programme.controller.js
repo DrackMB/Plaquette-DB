@@ -1,6 +1,4 @@
-const db = require("../models");
-const Programme = db.Programme;
-const Blocs = db.Blocs;
+const { Programme, Blocs } = require("../models");
 
 exports.create = (req, res) => {
   if (!req.body.libelle) {
